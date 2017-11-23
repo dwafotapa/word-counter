@@ -1,6 +1,13 @@
-Evaneos test-js
-==
+# Word Counter
+Word Counter is a JavaScript package that counts the number of occurences of each word in a text.
 
-> On cherche à calculer le nombre d'occurence de chaque mots dans un texte.
-> Les mots de moins de deux lettres seront ignorés. Concevez un paquet npm qui répond à ce problème.
-> Dans le doute, utilisez votre bon sens.
+# Installation
+Once you cloned the repository, you need to install the npm packages first:
+```sh
+yarn
+```
+
+To run the tests:
+```sh
+yarn test
+```
