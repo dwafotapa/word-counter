@@ -1,11 +1,12 @@
 function wordCounter(text, minLength) {
-    const words = text.split(/[\d\s.,;:!?\-_=+'"@£$%^&*()€#/]/);
-    const wordCounts = words.reduce((accumulator, currentValue) => {
-        const hash = accumulator;
-        const word = currentValue.toLowerCase();
-        if (word && word.length >= minLength) {
-            hash[word] = (hash[word] || 0) + 1;
+    const words = text.toLowerCase().split(/[^\u0041-\u005A\u0061-\u007A\u00C0-\u00FF\u0400-\u04FF\u0500-\u052F]/);
+    const wordCounts = words.reduce((accumulator, word) => {
+        if (!word || word.length < minLength) {
+            return accumulator;
         }
+
+        const hash = { ...accumulator };
+        hash[word] = (hash[word] || 0) + 1;
         return hash;
     }, {});
     return wordCounts;
